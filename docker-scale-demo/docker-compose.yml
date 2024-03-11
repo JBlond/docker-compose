@@ -1,0 +1,16 @@
+version: '2.2'
+services:
+  reverse-proxy:
+    container_name: reverse-proxy
+    image: openresty/openresty:alpine
+    restart: unless-stopped
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+    ports:
+      - 8080:80
+  app:
+    # A container that exposes an API to show its IP address
+    image: traefik/whoami
+    restart: unless-stopped
+    scale: 4
