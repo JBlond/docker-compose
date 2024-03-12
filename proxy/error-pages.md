@@ -1,5 +1,9 @@
-https://github.com/HttpErrorPages/HttpErrorPages.git data/nginx/error_pages
+# custom error pages
 
+```bash
+git clone https://github.com/HttpErrorPages/HttpErrorPages.git data/nginx/error_pages
+mkdir -p data/nginx/custom
+```
 You can add a file server_proxy.conf in your /data/nginx/custom with your content example to set the custom error page globaly :
 
 ```ini
