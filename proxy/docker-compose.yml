@@ -23,7 +23,7 @@ services:
       PUID: 1000
       PGID: 1000
     volumes:
-      - ./data:/data
+      - ./data/app:/data
       - ./letsencrypt:/etc/letsencrypt
     depends_on:
       - db
