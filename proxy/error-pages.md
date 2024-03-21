@@ -4,7 +4,11 @@
 git clone https://github.com/HttpErrorPages/HttpErrorPages.git data/nginx/error_pages
 mkdir -p data/nginx/custom
 ```
-You can add a file server_proxy.conf in your /data/nginx/custom with your content example to set the custom error page globaly :
+You can add a file server_proxy.conf in your /data/nginx/custom with your content example to set the custom error page globally:
+
+```bash
+$EDITOR data/nginx/custom/server_proxy.conf
+```
 
 ```ini
 error_page 400 /error_pages/HTTP400.html;
@@ -19,7 +23,7 @@ error_page 503 /error_pages/HTTP503.html;
 proxy_intercept_errors on;
 
 location /error_pages/ {
-            alias /data/nginx/error_pages/dist/;
-                internal;
+    alias /data/nginx/error_pages/dist/;
+    internal;
 }
 ```
