@@ -25,6 +25,7 @@ services:
     volumes:
       - ./data/app:/data
       - ./letsencrypt:/etc/letsencrypt
+      - ./_hsts_map.conf:/app/templates/_hsts_map.conf
     depends_on:
       - db
 
