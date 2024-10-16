@@ -1,0 +1,13 @@
+ervices:
+  mstream:
+    image: lscr.io/linuxserver/mstream:latest
+    container_name: mstream
+    environment:
+      - TZ=Etc/Berlin
+    volumes:
+      - ./config:/config
+      - /home/USERNAME/music:/music
+    ports:
+      - 5050:3000
+    restart: unless-stopped
+
